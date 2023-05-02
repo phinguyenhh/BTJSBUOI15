@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- BS4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- Exercise 1 -->
+    <div class="container pt-5">
+        <form class="w-80">
+            <h1 style="color: red;">Exercise 1</h1>
+            <div class="row">
+                <div class="form-group">
+                    <label for="">Điểm chuẩn</label>
+                    <input type="number" class="form-control" id="markPoint" placeholder="Nhập điểm chuẩn">
+                </div>
+                <div class="form-group">
+                    <label for="">Khu vực</label>
+                    <select class="form-control" id="selectArea">
+                        <option value="0">---Chọn khu vực---</option>
+                        <option value="2">Khu vực A</option>
+                        <option value="1">Khu vực B</option>
+                        <option value="0.5">Khu vực C</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Đối tượng</label>
+                    <select class="form-control" id="selectObject">
+                        <option value="0">---Chọn đối tượng---</option>
+                        <option value="2.5">Đối tượng 1</option>
+                        <option value="1.5">Đối tượng 2</option>
+                        <option value="1">Đối tượng 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Điểm môn thứ 1</label>
+                    <input type="number" class="form-control" id="markOne" placeholder="Nhập điểm môn thứ 1">
+                </div>
+                <div class="form-group">
+                    <label for="">Điểm môn thứ 2</label>
+                    <input type="number" class="form-control" id="markTwo" placeholder="Nhập điểm môn thứ 2">
+                </div>
+                <div class="form-group">
+                    <label for="">Điểm môn thứ 3</label>
+                    <input type="number" class="form-control" id="markThree" placeholder="Nhập điểm môn thứ 3">
+                </div>
+            </div>
+
+
+        </form>
+        <button type="button" class="btn btn-primary my-2" onclick="click1()">Kết quả</button>
+
+        <p class="alert alert-danger mt-2 py-3" id="result1"></p>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="container pt-5">
+        <form class="w-80">
+            <h1 style="color: red;">Exercise 2</h1>
+            <div class="row">
+                <div class="form-group">
+                    <label for="">Nhập họ tên</label>
+                    <input type="text" class="form-control" id="name" placeholder="Nhập họ tên">
+                </div>    
+                <div class="form-group">
+                    <label for="">Số Kw</label>
+                    <input type="number" class="form-control" id="kw" placeholder="Nhập số kw">
+                </div>   
+            </div>
+
+
+        </form>
+        <button type="button" class="btn btn-primary my-2" onclick="click2()">Tính tiền điện</button>
+
+        <p class="alert alert-danger mt-2 py-3" id="result2"></p>
+    </div>
+
+
+    <!-- BS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
