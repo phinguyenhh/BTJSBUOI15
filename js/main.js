@@ -18,10 +18,10 @@ function click1() {
     var markOne = Number(document.getElementById("markOne").value)
     var markTwo = Number(document.getElementById("markTwo").value)
     var markThree = Number(document.getElementById("markThree").value)
-    var totalObject,totalMark = 0
-         totalObject =  markOne + markTwo + markThree
-         totalMark = totalObject + selectArea + selectObject
-    
+    var totalObject, totalMark = 0
+    totalObject = markOne + markTwo + markThree
+    totalMark = totalObject + selectArea + selectObject
+
     if (totalMark >= markPoint && markOne != 0 && markTwo != 0 && markThree != 0) {
         document.getElementById("result1").innerHTML = "Bạn đã đậu. Tổng điểm: " + totalMark
     } else if (totalMark < markPoint && totalObject != 0) {
@@ -49,24 +49,56 @@ function click2() {
     var name = document.getElementById("name").value
     var kw = Number(document.getElementById("kw").value)
 
-    var totalKw = 0 ;
+    var totalKw = 0;
 
     if (kw > 0) {
         if (kw > 0 && kw <= 50) {
             totalKw = kw * 500
         } else if (kw > 50 && kw <= 100) {
-            totalKw = 50 * 500 + ( kw - 50 ) * 650
+            totalKw = 50 * 500 + (kw - 50) * 650
         } else if (kw > 100 && kw <= 200) {
-            totalKw = 50 * 500 + 50 * 650 + ( kw - 100 ) * 850
-        } else if ( kw > 200 && kw <= 350) {
-            totalKw = 50 * 500 + 50 * 650 + 100 * 850 + ( kw - 200 ) * 1100
+            totalKw = 50 * 500 + 50 * 650 + (kw - 100) * 850
+        } else if (kw > 200 && kw <= 350) {
+            totalKw = 50 * 500 + 50 * 650 + 100 * 850 + (kw - 200) * 1100
         } else {
-            totalKw = 50 * 500 + 50 * 650 + 100 * 850 + 150 * 1100 + ( kw - 350 ) * 1300
+            totalKw = 50 * 500 + 50 * 650 + 100 * 850 + 150 * 1100 + (kw - 350) * 1300
         }
-    
+
         document.getElementById("result2").innerHTML = "Họ tên: " + name + ' ' + "Tiền điện: " + totalKw.toLocaleString()
     } else {
         alert(" số kw không hợp lệ")
     }
 
-    }
+}
+
+// EXERCISE 3
+function click3() {
+    var name3 = document.getElementById("name3").value
+    var thunhap = Number(document.getElementById("thunhap").value)
+    var member = Number(document.getElementById("member").value)
+
+    var totalThunhap = 0;
+    var tax = 0;
+    if (thunhap > 0 && thunhap <= 60e+6) {
+        tax = 5 / 100
+
+    } else if (thunhap > 60e+6 && thunhap <= 120e+6) {
+        tax = 10 / 100
+
+    } else if (thunhap > 120e+6 && thunhap <= 210e+6) {
+        tax = 15 / 100
+    } else if (thunhap > 210e+6 && thunhap <= 384e+6) {
+        tax = 20 / 100
+    } else if (thunhap > 384e+6 && thunhap <= 624e+6) {
+        tax = 25 / 100
+    } else if (thunhap > 624e+6 && thunhap <= 960e+6) {
+        tax = 30 / 100
+    } else { tax = 35 / 100 }
+
+    totalThunhap = ((thunhap - 4e+6) - (member * 1.6e+6)) * tax
+
+    document.getElementById("result3").innerHTML = "Họ tên: " + name3 + ' ' + "Tiền thuế thu nhập cá nhân: " + (totalThunhap).toLocaleString()
+
+}
+
+// EXERCISE 4
