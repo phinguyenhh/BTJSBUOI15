@@ -102,3 +102,82 @@ function click3() {
 }
 
 // EXERCISE 4
+
+function showHide() {
+    var typeMember = Number(document.getElementById('typeMember').value)
+    if (typeMember == 2) {
+        document.getElementById('show-form').classList.remove('showhide')
+    } else {
+        document.getElementById('show-form').classList.add('showhide')
+
+    }
+}
+
+
+
+
+
+function main() {
+
+
+    var typeMember = Number(document.getElementById('typeMember').value);
+    var customer = document.getElementById('customer').value;
+    var channel = Number(document.getElementById('channel').value);
+    var connect = Number(document.getElementById('connect').value);
+
+
+    var typeMem = checkTypeMember(typeMember)
+    var total = 0;
+
+
+    switch (typeMem) {
+        case "Nhadan":
+            total = calcTotal(typeMem, channel, connect)
+            break;
+        case "Doanhnghiep":
+            total = calcTotal(typeMem, channel, connect)
+
+            break;
+        default:
+            break;
+    }
+
+    document.getElementById('result4').innerHTML = "Mã khách hàng: " + customer + " Tiền cáp: " + new Intl.NumberFormat('en-HOSSDDG', { style: 'currency', currency: 'USD' }).format(total);
+
+}
+
+
+
+
+
+function checkTypeMember(typeMember) {
+    if (typeMember == 1) {
+        return "Nhadan"
+
+    } else if (typeMember == 2) {
+        return "Doanhnghiep"
+    } else {
+        alert("Chọn lại")
+        return ""
+    }
+
+}
+
+function calcTotal(typeMem, channel, connect) {
+    var xuliNhadan = 4.5;
+    var dichvuNhadan = 20.5;
+    var kenhNhadan = 7.5;
+    var xuliDN = 15;
+    var dichDN = 75;
+    var kenhDN = 50;
+
+    if (typeMem == "Nhadan") {
+        return xuliNhadan + dichvuNhadan + kenhNhadan * channel
+    } else {
+        if (connect <= 10) {
+            return xuliDN + dichDN + kenhDN * channel
+        } else {
+            return xuliDN + (connect - 10) * 5 + dichDN + kenhDN * channel
+        }
+    }
+}

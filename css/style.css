@@ -2,3 +2,7 @@
     width: 33.33%;   
     padding-left: 25px;
 }
+
+.showhide {
+    display: none;
+}
