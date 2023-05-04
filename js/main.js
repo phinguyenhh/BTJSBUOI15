@@ -81,21 +81,32 @@ function click3() {
     var tax = 0;
     if (thunhap > 0 && thunhap <= 60e+6) {
         tax = 5 / 100
+        totalThunhap = thunhap * tax - 4e+6 - member * 1.6e+6
+
 
     } else if (thunhap > 60e+6 && thunhap <= 120e+6) {
         tax = 10 / 100
+        totalThunhap = 60e+6 * 5 / 100 + (thunhap - 60e+6) * tax - 4e+6 - member * 1.6e+6
 
     } else if (thunhap > 120e+6 && thunhap <= 210e+6) {
         tax = 15 / 100
+        totalThunhap = 60e+6 * 5 / 100 + 120e+6 * 10 / 100 + (thunhap - 120e+6) * tax - 4e+6 - member * 1.6e+6
     } else if (thunhap > 210e+6 && thunhap <= 384e+6) {
         tax = 20 / 100
+        totalThunhap = 60e+6 * 5 / 100 + 120e+6 * 10 / 100 + 210e+6 * 15 / 100 + (thunhap - 210e+6) * tax - 4e+6 - member * 1.6e+6
+
     } else if (thunhap > 384e+6 && thunhap <= 624e+6) {
         tax = 25 / 100
+        totalThunhap = 60e+6 * 5 / 100 + 120e+6 * 10 / 100 + 210e+6 * 15 / 100 + 384e+6 * 20 / 100 + (thunhap - 384e+6) * tax - 4e+6 - member * 1.6e+6
     } else if (thunhap > 624e+6 && thunhap <= 960e+6) {
         tax = 30 / 100
-    } else { tax = 35 / 100 }
+        totalThunhap = 60e+6 * 5 / 100 + 120e+6 * 10 / 100 + 210e+6 * 15 / 100 + 384e+6 * 20 / 100 + 624e+6 * 25 / 100 + (thunhap - 624e+6) * tax - 4e+6 - member * 1.6e+6
 
-    totalThunhap = ((thunhap - 4e+6) - (member * 1.6e+6)) * tax
+    } else {
+        tax = 35 / 100
+        totalThunhap = 60e+6 * 5 / 100 + 120e+6 * 10 / 100 + 210e+6 * 15 / 100 + 384e+6 * 20 / 100 + 624e+6 * 25 / 100 + 960e+6 * 30 / 100 + (thunhap - 960e+6) * tax - 4e+6 - member * 1.6e+6
+    }
+
 
     document.getElementById("result3").innerHTML = "Họ tên: " + name3 + ' ' + "Tiền thuế thu nhập cá nhân: " + (totalThunhap).toLocaleString()
 
